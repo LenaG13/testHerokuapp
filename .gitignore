@@ -1,0 +1,9 @@
+# Project exclude paths
+/target/
+/src/test/resources/
+/src/main/
+/.idea/
+/Selen.iml/
+/pom.xml/
+/testHerokuapp.iml
+/pom.xml
