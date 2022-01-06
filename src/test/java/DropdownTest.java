@@ -33,10 +33,10 @@ public class DropdownTest {
         Assert.assertFalse(dropdownSelect.getAllSelectedOptions().isEmpty());
 
         dropdownSelect.selectByVisibleText("Option 1");
-        Assert.assertEquals(dropdownSelect.getFirstSelectedOption().getText(), "Option 1 is invalid");
+        Assert.assertEquals(dropdownSelect.getFirstSelectedOption().getText(), "Option 1", "Option 1 is invalid");
 
         dropdownSelect.selectByVisibleText("Option 2");
-        Assert.assertEquals(dropdownSelect.getFirstSelectedOption().getText(), "Option 2 is invalid");
+        Assert.assertEquals(dropdownSelect.getFirstSelectedOption().getText(), "Option 2", "Option 2 is invalid");
     }
 
     // variant 2 By.xpath
