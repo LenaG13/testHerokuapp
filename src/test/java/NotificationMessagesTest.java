@@ -28,14 +28,22 @@ public class NotificationMessagesTest {
     }
 
     @Test
-    public void notificationMessages() {
+    public void notificationMessagesSuccessful() {
         String message1 = "Action successful\n" + "×";
+        Assert.assertEquals(message(), message1, "Action successful - invalid");
+    }
+
+    @Test
+    public void notificationMessagesUnsuccessful() {
         String message2 = "Action unsuccesful, please try again\n" + "×";
+        Assert.assertEquals(message(), message2, "Action unsuccesful, please try again - invalid");
+    }
+
+    public String message() {
         WebElement clickHere = driver.findElement(By.xpath("//*[@id=\"content\"]/div/p/a"));
         clickHere.click();
         String message = driver.findElement(By.xpath("//*[@id=\"flash\"]")).getText();
-        Assert.assertEquals(message, message1, "Action successful - invalid");
-        Assert.assertEquals(message, message2, "Action unsuccesful, please try again - invalid");
+        return message;
     }
 
     @AfterClass
